@@ -1,7 +1,8 @@
 import "./App.css";
 import CaptionCarousel from "./components/Carousel";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import AllRoutes from "./routes/AllRoutes";
+// import AllRoutes from "./routes/AllRoutes";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
       Vitae ab voluptate ipsam voluptatem deserunt sed est. Quas provident consequuntur deserunt et omnis. Expedita quis culpa nisi illum, officia molestias quidem ipsa veritatis et minima sint quasi, consectetur incidunt.
       Labore aperiam cupiditate voluptatum nemo veritatis ipsam et aut quaerat reiciendis dolores blanditiis, sunt suscipit alias architecto asperiores nobis sit quis. Quam, dolorem nesciunt. Architecto soluta magni corrupti nulla obcaecati.
       Et maxime culpa, suscipit ex voluptatibus ab iure deleniti eligendi iste saepe, necessitatibus facere rem reiciendis nam reprehenderit accusantium? Quis sapiente obcaecati non accusamus saepe maiores quod qui libero consequatur.
+      
+      
+      hey
+      <Footer />
     </div>
   );
 }
