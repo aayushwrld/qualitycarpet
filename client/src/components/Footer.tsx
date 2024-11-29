@@ -78,7 +78,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function Footer() {
   return (
     <Box
-      bg={'blackAlpha'}
+      bg={'black'}
       color={'white'}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
@@ -88,7 +88,7 @@ export default function Footer() {
             <Box>
               <Logo color={'white'} />
             </Box>
-            <Text fontSize={'sm'}>© 2022 Chakra Templates. All rights reserved</Text>
+            <Text fontSize={'sm'}>© 2024 Quality . All rights reserved</Text>
             <Stack direction={'row'} spacing={6}>
               <SocialButton label={'Twitter'} href={'#'}>
                 <FaTwitter />
