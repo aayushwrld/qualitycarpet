@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.png"
 
 const navOptions: { to: string; option: string }[] = [
   { to: "/", option: "Services" },
@@ -37,9 +38,9 @@ const Navbar = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Box color="black" fontSize={{ base: "1.5rem", sm: "2rem" }}>
-          Logo
-        </Box>
+        <Flex color="black" justifyContent={'center'} alignItems={'center'}>
+        <img src={Logo} width={'170px'}/>
+        </Flex>
         <Flex
           display={{ base: "none", md: "flex" }}
           color="black"
