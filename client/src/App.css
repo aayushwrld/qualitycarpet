@@ -9,7 +9,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: ivory;
 }
 
 .navbar {
@@ -24,7 +24,7 @@
 }
 
 #nav-option {
-  color: #fff;
+  color: #000;
   display: inline-block;
   position: relative;
   transition: all 0.2s ease-out;
@@ -39,7 +39,7 @@
   height: 1.8px;
   bottom: -1px;
   left: 0;
-  background-color: #fff;
+  background-color: #000;
   transition: all 0.25s ease-out;
 }
 
