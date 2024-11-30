@@ -9,7 +9,7 @@ export default function Error() {
           display="inline-block"
           as="h2"
           size="2xl"
-          bgGradient="linear(to-r, teal.400, teal.600)"
+          bgGradient="linear(to-r, #4497F7, #3684E7)"
           backgroundClip="text"
         >
           404
@@ -21,14 +21,14 @@ export default function Error() {
           The page you&apos;re looking for does not seem to exist
         </Text>
         <Link to={"/"}>
-          <Button
-            colorScheme="teal"
-            bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
-            color="white"
-            variant="solid"
-          >
-            Go to Home
-          </Button>
+        <Button
+      colorScheme="blue"
+      bgGradient="linear(to-r, #4497F7, #3D8EEF, #3684E7)" // Blue gradient
+      color="white"
+      variant="solid"
+    >
+      More Reviews
+    </Button>
         </Link>
       </Box>
     </Flex>
