@@ -27,7 +27,7 @@ export default function Error() {
       color="white"
       variant="solid"
     >
-      More Reviews
+      Go Home
     </Button>
         </Link>
       </Box>

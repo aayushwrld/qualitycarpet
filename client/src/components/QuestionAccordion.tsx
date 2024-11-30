@@ -8,6 +8,7 @@ import {
   Text,
   Container,
   AccordionIcon,
+  Heading,
 } from "@chakra-ui/react";
 
 export default function QuestionAccordion() {
@@ -19,6 +20,17 @@ export default function QuestionAccordion() {
       bg={useColorModeValue("white.50", "white.800")}
     >
       <Container margin={0}>
+        {/* Heading */}
+        <Heading
+          textAlign="center"
+          mb={6} // Add spacing between the heading and the accordion
+          fontFamily={"Work Sans"}
+          fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
+        >
+          Get to know more
+        </Heading>
+        
+        {/* Accordion */}
         <Accordion allowMultiple width="100%" borderColor={"black"}>
           {/* Question 1 */}
           <AccordionItem borderRadius="10px">
@@ -29,8 +41,7 @@ export default function QuestionAccordion() {
               p={4}
             >
               <Text fontSize="md">Why choose HS Carpets & Flooring?</Text>
-              <AccordionIcon/>
-
+              <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
               <Text color="black.600">
@@ -51,8 +62,7 @@ export default function QuestionAccordion() {
               p={4}
             >
               <Text fontSize="md">What flooring services do we offer?</Text>
-              <AccordionIcon/>
-
+              <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
               <Text color="black.600">
@@ -84,7 +94,7 @@ export default function QuestionAccordion() {
               p={4}
             >
               <Text fontSize="md">What makes us stand out?</Text>
-            <AccordionIcon/>
+              <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
               <Text color="black.600">
@@ -112,7 +122,6 @@ export default function QuestionAccordion() {
               </Text>
             </AccordionPanel>
           </AccordionItem>
-          
         </Accordion>
       </Container>
     </Flex>
