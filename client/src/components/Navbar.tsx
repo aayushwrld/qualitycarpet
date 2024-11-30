@@ -39,7 +39,9 @@ const Navbar = () => {
         alignItems="center"
       >
         <Flex color="black" justifyContent={'center'} alignItems={'center'}>
-        <img src={Logo} width={'170px'}/>
+          <Link to={'/'}>
+          <img src={Logo} width={'170px'}/>
+          </Link>
         </Flex>
         <Flex
           display={{ base: "none", md: "flex" }}

@@ -32,7 +32,7 @@ export default function ContactCard() {
     <Container maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          color="white"
+          color="black"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}>
