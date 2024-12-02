@@ -13,6 +13,11 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
+import carousel12 from "../assets/carousel1.jpeg";
+import carousel2 from "../assets/carousel2.jpeg";
+import carousel3 from "../assets/carousel3.jpeg";
+import carousel4 from "../assets/carousel4.jpeg";
+import carousel5 from "../assets/carousel5.jpeg";
 
 // Settings for the slider
 const settings = {
@@ -37,20 +42,27 @@ export default function CaptionCarousel() {
     {
       title: "Premium Carpet Collection",
       text: "Explore our exclusive range of premium carpets designed to add comfort and elegance to your home or office.",
-      image:
-        "https://www.flooringsuperstore.com/media/catalog/product/cache/43942d99e4560257de5108a0f0547660/c/-/c-luna-6724-lifstyle.jpg",
+      image: carousel12,
     },
     {
       title: "Customizable Carpet Designs",
       text: "Choose from a variety of patterns, colors, and textures to match your unique style. Tailored to fit any room perfectly.",
-      image:
-        "https://www.jiomart.com/images/product/original/rvpghylev9/insight-home-furnishing-anti-slip-shaggy-fluffy-fur-rugs-and-carpet-for-living-room-bedroom-beige-3ftx5ft-product-images-orvpghylev9-p598315549-0-202302112139.jpg",
+      image: carousel2,
     },
     {
       title: "Durable & Eco-Friendly Carpets",
       text: "Our carpets are crafted for durability and sustainability. Enhance your interiors while caring for the environment.",
-      image:
-        "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      image: carousel3,
+    },
+    {
+      title: "Luxurious Handwoven Carpets",
+      text: "Experience the craftsmanship of handwoven carpets, adding a touch of luxury and tradition to your living space.",
+      image: carousel4,
+    },
+    {
+      title: "Soft & Cozy Rugs for Your Home",
+      text: "Step onto softness with our cozy rugs, designed for comfort and style in any room of your home.",
+      image: carousel5,
     },
   ];
 
@@ -134,14 +146,23 @@ export default function CaptionCarousel() {
                     bottom="0"
                     zIndex={-1}
                     background="rgba(255, 255, 255, 0.3)"
-                    backdropFilter="blur(5px)"
+                    backdropFilter="blur(8px)"
                     borderRadius="md"
+                    _after={{
+                      content: '""',
+                      position: "absolute",
+                      top: "-10px",
+                      left: "-10px",
+                      right: "-10px",
+                      bottom: "-10px",
+                      zIndex: -2,
+                      background: "inherit",
+                      filter: "blur(10px)",
+                      borderRadius: "inherit",
+                    }}
                   />
                   <Box padding="20px">{card.title}</Box>
                 </Heading>
-                {/* <Text fontSize={{ base: 'md', lg: 'lg' }} color="black"> */}
-                {/* {card.text} */}
-                {/* </Text> */}
               </Stack>
             </Container>
           </Box>

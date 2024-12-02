@@ -54,7 +54,7 @@ export default function ContactCard() {
                         color="black"
                         _hover={{ border: '2px solid #1C6FEB' }}
                         leftIcon={<MdPhone color="#1970F1" size="20px" />}>
-                        +91-988888888
+                        +44 7588 608000
                       </Button>
                       <Button
                         size="md"
@@ -64,7 +64,7 @@ export default function ContactCard() {
                         color="black"
                         _hover={{ border: '2px solid #1C6FEB' }}
                         leftIcon={<MdEmail color="#1970F1" size="20px" />}>
-                        hello@abc.com
+                        qualitycarpetandflooringltd@gmail.com
                       </Button>
                       <Button
                         size="md"
@@ -74,7 +74,7 @@ export default function ContactCard() {
                         color="black"
                         _hover={{ border: '2px solid #1C6FEB' }}
                         leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
-                        Karnavati, India
+                        Essex and London
                       </Button>
                     </VStack>
                   </Box>

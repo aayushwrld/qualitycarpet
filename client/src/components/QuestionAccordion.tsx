@@ -40,12 +40,12 @@ export default function QuestionAccordion() {
               justifyContent="space-between"
               p={4}
             >
-              <Text fontSize="md">Why choose HS Carpets & Flooring?</Text>
+              <Text fontSize="md">Why choose Quality Carpet and Flooring?</Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
               <Text color="black.600">
-                At HS Carpets & Flooring, we bring years of expertise and a
+                At Quality Carpet and Flooring, we bring years of expertise and a
                 local touch to provide top-notch flooring solutions. Our
                 tailored services, affordable pricing, and dedication to quality
                 make us the go-to choice for flooring services in Essex.
