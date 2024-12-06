@@ -119,7 +119,7 @@ export default function ReviewSection() {
         <Link to="/reviews">
           <Button
             colorScheme="blue"
-            bgGradient="linear(to-r, #4497F7, #3D8EEF, #3684E7)" // Blue gradient
+            bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
             color="white"
             variant="solid"
           >

@@ -14,22 +14,22 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   MdPhone,
   MdEmail,
   MdLocationOn,
   MdFacebook,
   MdOutlineEmail,
-} from 'react-icons/md';
-import { BsPerson } from 'react-icons/bs';
-import { FaTwitter, FaWhatsapp } from 'react-icons/fa';
+} from "react-icons/md";
+import { BsPerson } from "react-icons/bs";
+import { FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 export default function ContactCard() {
   return (
     <Container maxW="full" mt={0} centerContent overflow="hidden">
       <Flex
-        direction={{ base: 'column', md: 'row' }}
+        direction={{ base: "column", md: "row" }}
         justifyContent="center"
         alignItems="center"
         w="full"
@@ -39,21 +39,24 @@ export default function ContactCard() {
           color="black"
           borderRadius="lg"
           p={{ base: 4, md: 8, lg: 16 }}
-          textAlign={{ base: 'center', md: 'left' }}
+          textAlign={{ base: "center"}}
         >
           <Heading>Contact</Heading>
           <Text mt={{ base: 3, md: 5 }} color="gray.500">
             Fill up the form below to contact
           </Text>
           <Box py={{ base: 5, md: 8, lg: 10 }}>
-            <VStack spacing={3} alignItems={{ base: 'center', md: 'flex-start' }}>
+            <VStack
+              spacing={3}
+              alignItems={{ base: "center", md: "flex-start" }}
+            >
               <Button
                 size="md"
                 height="48px"
                 width="200px"
                 variant="ghost"
                 color="black"
-                _hover={{ border: '2px solid #1C6FEB' }}
+                _hover={{ border: "2px solid #1C6FEB" }}
                 leftIcon={<MdPhone color="#1970F1" size="20px" />}
               >
                 +44 7588 608000
@@ -61,10 +64,10 @@ export default function ContactCard() {
               <Button
                 size="md"
                 height="48px"
-                width="200px"
+                width="360px"
                 variant="ghost"
                 color="black"
-                _hover={{ border: '2px solid #1C6FEB' }}
+                _hover={{ border: "2px solid #1C6FEB" }}
                 leftIcon={<MdEmail color="#1970F1" size="20px" />}
               >
                 qualitycarpetandflooringltd@gmail.com
@@ -75,7 +78,7 @@ export default function ContactCard() {
                 width="200px"
                 variant="ghost"
                 color="black"
-                _hover={{ border: '2px solid #1C6FEB' }}
+                _hover={{ border: "2px solid #1C6FEB" }}
                 leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
               >
                 Essex and London
@@ -83,16 +86,17 @@ export default function ContactCard() {
             </VStack>
           </Box>
           <HStack
-            mt={{ base: 5, lg: 10 }}
+            mt={{ base: 5 }}
+            ml={{md:5}}
             spacing={5}
-            justifyContent={{ base: 'center', md: 'flex-start' }}
+            justifyContent={{ base: "center", md: "flex-start" }}
           >
             <IconButton
               aria-label="facebook"
               variant="ghost"
               size="lg"
               isRound
-              _hover={{ bg: '#0D74FF' }}
+              _hover={{ bg: "#0D74FF" }}
               icon={<MdFacebook size="28px" />}
             />
             <IconButton
@@ -100,7 +104,7 @@ export default function ContactCard() {
               variant="ghost"
               size="lg"
               isRound
-              _hover={{ bg: '#0D74FF' }}
+              _hover={{ bg: "#0D74FF" }}
               icon={<FaWhatsapp size="28px" />}
             />
             <IconButton
@@ -108,7 +112,7 @@ export default function ContactCard() {
               variant="ghost"
               size="lg"
               isRound
-              _hover={{ bg: '#0D74FF' }}
+              _hover={{ bg: "#0D74FF" }}
               icon={<FaTwitter size="28px" />}
             />
           </HStack>
@@ -118,11 +122,10 @@ export default function ContactCard() {
           bg="white"
           borderRadius="lg"
           boxShadow="lg"
-          w={{ base: 'full', md: '50%' }}
+          w={{ base: "full", md: "50%" }}
           maxW="lg"
           mt={{ base: 8, md: 0 }}
-          m={{base: 10, md: 0
-          }}
+          m={{ base: 10, md: 0 }}
         >
           <Box m={8} color="#0B0E3F">
             <VStack spacing={5}>
@@ -149,13 +152,18 @@ export default function ContactCard() {
                 <Textarea
                   borderColor="gray.300"
                   _hover={{
-                    borderRadius: 'gray.300',
+                    borderRadius: "gray.300",
                   }}
                   placeholder="Your message"
                 />
               </FormControl>
               <FormControl float="right">
-                <Button variant="solid" bg="#0D74FF" color="white">
+                <Button
+                  colorScheme="blue"
+                  bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
+                  color="white"
+                  variant="solid"
+                >
                   Send Message
                 </Button>
               </FormControl>

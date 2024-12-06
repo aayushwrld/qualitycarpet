@@ -20,10 +20,9 @@ export default function QuestionAccordion() {
       bg={useColorModeValue("white.50", "white.800")}
     >
       <Container margin={0}>
-        {/* Heading */}
         <Heading
           textAlign="center"
-          mb={6} // Add spacing between the heading and the accordion
+          mb={6}
           fontFamily={"Work Sans"}
           fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
         >
