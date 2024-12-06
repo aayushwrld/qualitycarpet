@@ -10,6 +10,7 @@ import {
   VStack,
   Text,
   Image,
+  Button,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
@@ -17,10 +18,11 @@ import Logo from "../assets/Logo.png";
 import Logo2 from "../assets/Logo2.png";
 import Whatsapp from "../assets/Whatsapp.svg";
 import Instagram from "../assets/Instagram.svg";
+import { IoIosCall } from "react-icons/io";
 
 const navOptions: { to: string; option: string }[] = [
   { to: "/", option: "Services" },
-  { to: "/", option: "Pricing" },
+  { to: "/pricing", option: "Pricing" },
   { to: "/", option: "Gallery" },
   { to: "/contact", option: "Contact" },
 ];
@@ -31,8 +33,8 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Flex
-        bg="rgba(255, 255, 255, 0.05)"
-        backdropFilter="blur(8px)"
+        bg="rgba(255, 255, 255, 0.2)"
+        backdropFilter="blur(12px)"
         border="3px solid #020817"
         boxShadow="0 2px 8px #000"
         borderRadius={{ base: "20px", md: "25px" }}
@@ -61,7 +63,7 @@ const Navbar = () => {
             ))}
           </Flex>
           <Flex
-            onClick={() => window.open("https://wa.me/917814127186", "_blank")}
+            onClick={() => window.open("https://wa.me/447588608000", "_blank")}
             className="icon-animate"
           >
             <img src={Whatsapp} alt="Icon" width="35" height="35" />
@@ -106,7 +108,7 @@ const Navbar = () => {
               ))}
               <Flex
                 onClick={() =>
-                  window.open("https://wa.me/917814127186", "_blank")
+                  window.open("https://wa.me/447588608000", "_blank")
                 }
               >
                 <img src={Whatsapp} alt="Icon" width="40" height="40" />
@@ -121,6 +123,17 @@ const Navbar = () => {
               >
                 <img src={Instagram} alt="Icon" width="42" height="42" />
               </Flex>
+              <Button
+                leftIcon={<IoIosCall />}
+                colorScheme="green"
+                bgGradient="linear(to-r, green.300, #38A169, green.600)"
+                color="white"
+                variant="solid"
+                as="a"
+                href="tel:+447588608000"
+              >
+                Call Now
+              </Button>
             </VStack>
           </DrawerBody>
         </DrawerContent>

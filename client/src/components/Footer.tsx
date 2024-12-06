@@ -9,11 +9,13 @@ import {
   Input,
   IconButton,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
-import Logo from "../assets/Logo.png";
+import Logo2 from "../assets/Logo2.png";
+import { Link } from "react-router-dom";
 
 const SocialButton = ({
   children,
@@ -66,7 +68,7 @@ export default function Footer() {
         >
           <Stack spacing={6}>
             <Box>
-              <img src={Logo} />
+              <Image src={Logo2} borderRadius={"12px"} />
             </Box>
             <Text fontSize={"sm"}>
               © 2024 Quality Carpet and Flooring. All rights reserved
@@ -96,12 +98,12 @@ export default function Footer() {
             <Box as="a" href={"#"}>
               Blog
             </Box>
-            <Box as="a" href={"#"}>
-              Contact us
-            </Box>
-            <Box as="a" href={"#"}>
-              Pricing
-            </Box>
+            <Link to={"/contact"}>
+              <Box>Contact Us</Box>
+            </Link>
+            <Link to={"/pricing"}>
+              <Box>Pricing</Box>
+            </Link>
             <Box as="a" href={"#"}>
               Testimonials
             </Box>
@@ -129,7 +131,10 @@ export default function Footer() {
             <Stack direction={"row"}>
               <Input
                 placeholder={"Your email address"}
-                border={0}
+                borderColor="#3684E7"
+                _hover={{
+                  boderColor: "#0D74FF",
+                }}
                 _focus={{
                   bg: "whiteAlpha.300",
                 }}

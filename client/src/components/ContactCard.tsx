@@ -15,15 +15,9 @@ import {
   InputLeftElement,
   Textarea,
 } from "@chakra-ui/react";
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from "react-icons/md";
+import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsPerson } from "react-icons/bs";
-import { FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export default function ContactCard() {
   return (
@@ -39,7 +33,7 @@ export default function ContactCard() {
           color="black"
           borderRadius="lg"
           p={{ base: 4, md: 8, lg: 16 }}
-          textAlign={{ base: "center"}}
+          textAlign={{ base: "center" }}
         >
           <Heading>Contact</Heading>
           <Text mt={{ base: 3, md: 5 }} color="gray.500">
@@ -56,6 +50,8 @@ export default function ContactCard() {
                 width="200px"
                 variant="ghost"
                 color="black"
+                as="a"
+                href="tel:+447588608000"
                 _hover={{ border: "2px solid #1C6FEB" }}
                 leftIcon={<MdPhone color="#1970F1" size="20px" />}
               >
@@ -87,33 +83,33 @@ export default function ContactCard() {
           </Box>
           <HStack
             mt={{ base: 5 }}
-            ml={{md:5}}
+            ml={{ md: 5 }}
             spacing={5}
-            justifyContent={{ base: "center", md: "flex-start" }}
+            justifyContent={{ base: "center" }}
           >
             <IconButton
-              aria-label="facebook"
-              variant="ghost"
-              size="lg"
-              isRound
-              _hover={{ bg: "#0D74FF" }}
-              icon={<MdFacebook size="28px" />}
-            />
-            <IconButton
-              aria-label="Whatsapp"
+              aria-label="WhatsApp"
               variant="ghost"
               size="lg"
               isRound
               _hover={{ bg: "#0D74FF" }}
               icon={<FaWhatsapp size="28px" />}
+              as="a"
+              href="https://wa.me/447588608000"
+              target="_blank"
+              rel="noopener noreferrer"
             />
             <IconButton
-              aria-label="Twitter"
+              aria-label="Instagram"
               variant="ghost"
               size="lg"
               isRound
               _hover={{ bg: "#0D74FF" }}
-              icon={<FaTwitter size="28px" />}
+              icon={<FaInstagram size="28px" />}
+              as="a"
+              href="https://www.instagram.com/qualitycarpetflooringltd?igsh=MTZwbDI0eWdmeXV5eQ"
+              target="_blank"
+              rel="noopener noreferrer"
             />
           </HStack>
         </Box>

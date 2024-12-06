@@ -147,7 +147,7 @@ export default function CaptionCarousel() {
                     zIndex={-1}
                     background="rgba(255, 255, 255, 0.3)"
                     backdropFilter="blur(8px)"
-                    borderRadius="md"
+                    borderRadius="20px"
                     _after={{
                       content: '""',
                       position: "absolute",
@@ -158,7 +158,6 @@ export default function CaptionCarousel() {
                       zIndex: -2,
                       background: "inherit",
                       filter: "blur(10px)",
-                      borderRadius: "inherit",
                     }}
                   />
                   <Box padding="20px">{card.title}</Box>
