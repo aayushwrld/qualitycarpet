@@ -35,7 +35,7 @@ const Navbar = () => {
         border="3px solid #020817"
         boxShadow="0 2px 8px #000"
         borderRadius={{ base: "20px", md: "25px" }}
-        p={{ base: "0.5rem 1rem", sm: "0.5rem 2rem" }}
+        p={{ base: "0.5rem 0.8rem", sm: "0.5rem 1.5rem" }}
         w={{ base: "90vw", sm: "80vw", lg: "60vw" }}
         justifyContent="space-between"
         alignItems="center"
