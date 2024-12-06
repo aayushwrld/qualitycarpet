@@ -4,7 +4,6 @@ import {
   AccordionButton,
   AccordionPanel,
   Flex,
-  useColorModeValue,
   Text,
   Container,
   AccordionIcon,
@@ -17,7 +16,6 @@ export default function QuestionAccordion() {
       margin={"1rem"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("white.50", "white.800")}
     >
       <Container margin={0}>
         <Heading
