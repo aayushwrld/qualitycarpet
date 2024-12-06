@@ -1,5 +1,4 @@
 import {
-  Box,
   Flex,
   IconButton,
   useDisclosure,
@@ -10,10 +9,12 @@ import {
   DrawerBody,
   VStack,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
+import Logo2 from "../assets/Logo2.png";
 import Whatsapp from "../assets/Whatsapp.svg";
 import Instagram from "../assets/Instagram.svg";
 
@@ -81,9 +82,17 @@ const Navbar = () => {
           <DrawerCloseButton color="white" />
           <DrawerBody>
             <VStack spacing="24px" mt="4">
-              <Box color="white" fontSize="2rem">
+              {/* <Box color="white" fontSize="2rem">
                 LOGO
-              </Box>
+              </Box> */}
+              <Link to={"/"}>
+                <Image
+                  src={Logo2}
+                  width={"170px"}
+                  borderRadius="12px" // Adjust the value to your preference
+                  alt="Logo"
+                />
+              </Link>
               {navOptions.map((navOption) => (
                 <Link
                   key={navOption.option}
@@ -104,7 +113,10 @@ const Navbar = () => {
               </Flex>
               <Flex
                 onClick={() =>
-                  window.open("https://www.instagram.com/qualitycarpetflooringltd?igsh=MTZwbDI0eWdmeXV5eQ", "_blank")
+                  window.open(
+                    "https://www.instagram.com/qualitycarpetflooringltd?igsh=MTZwbDI0eWdmeXV5eQ",
+                    "_blank"
+                  )
                 }
               >
                 <img src={Instagram} alt="Icon" width="42" height="42" />
