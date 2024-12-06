@@ -9,7 +9,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: ivory;
+  background-image: linear-gradient(135deg, ivory 0%, #e2d1c3 100%);
 }
 
 .navbar {
