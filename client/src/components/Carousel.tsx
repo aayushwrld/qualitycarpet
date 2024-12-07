@@ -93,6 +93,7 @@ export default function CaptionCarousel() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
+        bg={'#ffffff70'}
         onClick={() => slider?.slickPrev()}
       >
         <BiLeftArrowAlt size="40px" />
@@ -106,6 +107,11 @@ export default function CaptionCarousel() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
+        bg={'#ffffff70'}
+        filter={{
+          blur:"10px"
+        }}
+        blur={'10px'}
         onClick={() => slider?.slickNext()}
       >
         <BiRightArrowAlt size="40px" />
