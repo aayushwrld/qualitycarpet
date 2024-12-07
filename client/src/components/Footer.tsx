@@ -10,9 +10,10 @@ import {
   IconButton,
   useColorModeValue,
   Image,
+  Flex,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import Logo2 from "../assets/Logo2.png";
 import { Link } from "react-router-dom";
@@ -67,18 +68,19 @@ export default function Footer() {
           spacing={8}
         >
           <Stack spacing={6}>
-            <Box>
-              <Image src={Logo2} borderRadius={"12px"} />
-            </Box>
+            <Flex justifyContent={'center'}>
+              <Image src={Logo2} borderRadius={"12px"} width={'200px'}/>
+            </Flex>
             <Text fontSize={"sm"}>
               © 2024 Quality Carpet and Flooring. All rights reserved
             </Text>
             <Stack direction={"row"} spacing={6}>
-              <SocialButton label={"Twitter"} href={"#"}>
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton label={"YouTube"} href={"#"}>
-                <FaYoutube />
+              <SocialButton label={"Whatsapp"} 
+              href={
+                "https://wa.me/447588608000"
+              }
+              >
+                <FaWhatsapp />
               </SocialButton>
               <SocialButton
                 label={"Instagram"}
