@@ -51,7 +51,7 @@ const contactOptions = [
   },
   {
     label: "Email",
-    value: "qiualitycarpetandflooringltd@gmail.com",
+    value: "qualitycarpetandflooringltd@gmail.com",
     icon: HiOutlineMail,
   },
 ];

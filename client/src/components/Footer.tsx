@@ -13,7 +13,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import Logo2 from "../assets/Logo2.png";
 import { Link } from "react-router-dom";
