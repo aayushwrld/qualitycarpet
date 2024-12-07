@@ -58,6 +58,8 @@ export default function ContactCard() {
                 +44 7588 608000
               </Button>
               <Button
+                as="a"
+                href="mailto:qualitycarpetandflooringltd@gmail.com"
                 size="md"
                 height="48px"
                 width="360px"
@@ -92,7 +94,7 @@ export default function ContactCard() {
               variant="ghost"
               size="lg"
               isRound
-              _hover={{ bg: "#0D74FF" }}
+              _hover={{ bg: "blue.400" }}
               icon={<FaWhatsapp size="28px" />}
               as="a"
               href="https://wa.me/447588608000"
@@ -104,7 +106,7 @@ export default function ContactCard() {
               variant="ghost"
               size="lg"
               isRound
-              _hover={{ bg: "#0D74FF" }}
+              _hover={{ bg: "blue.400" }}
               icon={<FaInstagram size="28px" />}
               as="a"
               href="https://www.instagram.com/qualitycarpetflooringltd?igsh=MTZwbDI0eWdmeXV5eQ"
