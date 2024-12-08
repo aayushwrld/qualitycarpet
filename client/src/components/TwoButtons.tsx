@@ -31,6 +31,7 @@ export default function TwoButtons({ exportData }: any) {
           width={"50%"}
           colorScheme="blue"
           backgroundColor={isActive ? "" : "grey"}
+          size={["xs", "sm", "md"]}
         >
           Yes
         </Button>
@@ -39,6 +40,7 @@ export default function TwoButtons({ exportData }: any) {
           width={"50%"}
           colorScheme="blue"
           backgroundColor={!isActive ? "" : "grey"}
+          size={["xs", "sm", "md"]}
         >
           No
         </Button>
