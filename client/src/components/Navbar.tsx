@@ -21,10 +21,10 @@ import Instagram from "../assets/Instagram.svg";
 import { IoIosCall } from "react-icons/io";
 
 const navOptions: { to: string; option: string }[] = [
-  { to: "/", option: "Services" },
   { to: "/pricing", option: "Pricing" },
   { to: "/", option: "Gallery" },
   { to: "/contact", option: "Contact" },
+  { to: "/review", option: "Review Us" },
 ];
 
 const Navbar = () => {
@@ -57,7 +57,12 @@ const Navbar = () => {
         >
           <Flex gap={{ base: "1rem", sm: "1.5rem", lg: "2rem" }}>
             {navOptions.map((navOption) => (
-              <Link key={navOption.option} to={navOption.to} id="nav-option">
+              <Link
+                key={navOption.option}
+                to={navOption.to}
+                id="nav-option"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 {navOption.option}
               </Link>
             ))}
