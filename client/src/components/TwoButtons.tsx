@@ -1,7 +1,11 @@
 import { Button, ButtonGroup, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 
-export default function TwoButtons({ exportData }: any) {
+interface TwoButtonsProps {
+  exportData: (value: boolean) => void;
+}
+
+export default function TwoButtons({ exportData }: TwoButtonsProps) {
   const [isActive, setIsActive] = useState(true);
 
   const clickYes = () => {
