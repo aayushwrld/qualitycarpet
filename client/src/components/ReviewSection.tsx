@@ -47,7 +47,7 @@ function Rating({ rating }: RatingProps) {
 
 function ReviewCard() {
   return (
-    <Center py={2} margin={'10px'}>
+    <Center py={2} margin={"10px"}>
       <Box
         maxW={"445px"}
         w={"full"}
@@ -116,16 +116,39 @@ export default function ReviewSection() {
 
       {/* Navigation Button */}
       <Box textAlign="center" mt={8}>
-        <Link to="/reviews">
+        <Button
+          as={Link}
+          to="/reviews"
+          colorScheme="blue"
+          bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
+          color="white"
+          variant="solid"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          More Reviews
+        </Button>
+        <Box py={10}>
+          <Text
+            textAlign="center"
+            mb={2}
+            fontFamily={"Work Sans"}
+            fontSize={"2xl"}
+            fontWeight={'bold'}
+          >
+            Had a service done from us? Review us today.
+          </Text>
           <Button
-            colorScheme="blue"
-            bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
+            as={Link}
+            to="/review"
+            colorScheme="yellow"
+            bgGradient="linear(to-r, yellow.400, yellow.500, yellow.600)"
             color="white"
             variant="solid"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            More Reviews
+            Review Us
           </Button>
-        </Link>
+        </Box>
       </Box>
     </Box>
   );

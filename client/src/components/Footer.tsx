@@ -97,17 +97,17 @@ export default function Footer() {
             <Box as="a" href={"#"}>
               About us
             </Box>
-            <Box as="a" href={"#"}>
-              Blog
-            </Box>
             <Link to={"/contact"}>
               <Box>Contact Us</Box>
             </Link>
             <Link to={"/pricing"}>
               <Box>Pricing</Box>
             </Link>
-            <Box as="a" href={"#"}>
+            <Box as="a" href={"/reviews"}>
               Testimonials
+            </Box>
+            <Box as="a" href={"/review"}>
+              Review Us
             </Box>
           </Stack>
           <Stack align={"flex-start"}>
@@ -125,7 +125,7 @@ export default function Footer() {
               Privacy Policy
             </Box>
             <Box as="a" href={"#"}>
-              Satus
+              Status
             </Box>
           </Stack>
           <Stack align={"flex-start"}>
