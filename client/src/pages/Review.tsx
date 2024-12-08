@@ -39,7 +39,7 @@ export default memo(function Review() {
         <Flex
           gap={"2vw"}
           alignSelf={"center"}
-          width={"45%"}
+          width={["80%", "80%", "45%"]}
           flexDirection={"column"}
         >
           <Flex gap={"2vh"} alignItems={"center"}>
@@ -56,19 +56,22 @@ export default memo(function Review() {
               <Image width={"10vh"} src={logo} />
             </Box>
             <Flex direction={"column"}>
-              <Heading fontSize={"1.6vw"}>Quality Carpet & Flooring</Heading>
-              <Text>Based in London</Text>
+              <Heading fontSize={["5vw", "4vw", "1.6vw"]}>
+                Quality Carpet & Flooring
+              </Heading>
+              <Text fontSize={["1.3vh", "1.5vh", "2vh"]}>Based in London</Text>
             </Flex>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"Was any work carried out?"} />
             <TwoButtons exportData={yesNo} />
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"What services did you require?"} />
             <Select
+              size={["xs", "sm", "md"]}
               onChange={(e) => {
                 setData({ ...data, service: e.target.value });
               }}
@@ -83,40 +86,53 @@ export default memo(function Review() {
             </Select>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"How would you rate the experience?"} />
             <Flex gap={"3vh"} direction={"column"}>
               <Flex direction={"column"}>
-                <Text fontSize={"2vh"} color={"gray"}>
+                <Text fontSize={["1.3vh", "1.5vh", "2vh"]} color={"gray"}>
                   (1 = Terrible, 10 = Excellent)
                 </Text>
-                <Flex gap={1} direction={"column"}>
-                  <Text as={"b"}>Reliability & timekeeping</Text>
+                <Flex
+                  gap={1}
+                  direction={"column"}
+                  fontSize={["2vh", "2vh", "1.2vw"]}
+                >
+                  <Text fontWeight={"500"} fontSize={["1.8vh", "2vh", "1.2vw"]}>
+                    Reliability & timekeeping
+                  </Text>
                   <Rater />
                 </Flex>
               </Flex>
               <Flex gap={1} direction={"column"}>
-                <Text as={"b"}>Reliability & timekeeping</Text>
+                <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
+                  Reliability & timekeeping
+                </Text>
                 <Rater />
               </Flex>
               <Flex gap={1} direction={"column"}>
-                <Text as={"b"}>Reliability & timekeeping</Text>
+                <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
+                  Reliability & timekeeping
+                </Text>
                 <Rater />
               </Flex>
               <Flex gap={1} direction={"column"}>
-                <Text as={"b"}>Reliability & timekeeping</Text>
+                <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
+                  Reliability & timekeeping
+                </Text>
                 <Rater />
               </Flex>
             </Flex>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"Your Brief Job Description "} />
             <Flex direction={"column"}>
-              <Text fontSize={"2vh"} color={"gray"}>
+              <Text fontSize={["1.3vh", "1.5vh", "2vh"]} color={"gray"}>
                 (This will be used as Review Title)
               </Text>
               <Input
+                size={["xs", "sm", "md"]}
                 placeholder="Enter Text"
                 isRequired
                 borderColor={"black"}
@@ -124,9 +140,10 @@ export default memo(function Review() {
             </Flex>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"Your Review"} />
             <Textarea
+              size={["xs", "sm", "md"]}
               maxLength={600}
               placeholder="In your words, tell us about your experience. What did the company do well? Make sure not to include any personal information ..."
               isRequired
@@ -134,14 +151,19 @@ export default memo(function Review() {
             ></Textarea>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"Date of experience"} />
-            <Input borderColor={"black"} type="Date"></Input>
+            <Input
+              size={["xs", "sm", "md"]}
+              borderColor={"black"}
+              type="Date"
+            ></Input>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"What was the postcode of the project?"} />
             <Input
+              size={["xs", "sm", "md"]}
               isRequired
               placeholder="📍 Enter the postcode"
               borderColor={"black"}
@@ -149,14 +171,15 @@ export default memo(function Review() {
             ></Input>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Flex gap={"1vh"} alignItems={"center"}>
-              <Ques question={"What was the value of work completed?"} />
-              <Text fontSize={"2vh"} color={"gray"}>
+              <Ques question={"What was the value of work?"} />
+              <Text fontSize={["1.3vh", "1.5vh", "2vh"]} color={"gray"}>
                 (Optional)
               </Text>
             </Flex>
             <Input
+              size={["xs", "sm", "md"]}
               isRequired
               placeholder="💷 Enter the value"
               borderColor={"black"}
@@ -164,20 +187,22 @@ export default memo(function Review() {
             ></Input>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"Would you recommend this tradesperson?"} />
             <TwoButtons exportData={yesNo} />
           </Flex>
 
-          <Flex flexDirection={"column"} gap={"1vh"}>
+          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
             <Ques question={"Your contact details"} />
             <Flex gap={1}>
               <Input
+                size={["xs", "sm", "md"]}
                 borderColor={"black"}
                 type="text"
                 placeholder="First Name"
               />
               <Input
+                size={["xs", "sm", "md"]}
                 borderColor={"black"}
                 type="text"
                 placeholder="Last Name"
@@ -185,11 +210,13 @@ export default memo(function Review() {
             </Flex>
             <Flex gap={1}>
               <Input
+                size={["xs", "sm", "md"]}
                 borderColor={"black"}
                 type="number"
                 placeholder="Phone umber"
               />
               <Input
+                size={["xs", "sm", "md"]}
                 borderColor={"black"}
                 type="email"
                 placeholder="Email Address"

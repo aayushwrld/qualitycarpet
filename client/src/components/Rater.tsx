@@ -14,6 +14,7 @@ export default function Rater() {
     >
       {Array.from({ length: 10 }, (_, i) => (
         <Button
+          size={["xs", "sm", "md"]}
           borderRight={"1px solid black"}
           flex={1}
           backgroundColor={selected === i + 1 ? "blue.500" : "transparent"}
