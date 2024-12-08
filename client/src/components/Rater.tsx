@@ -11,7 +11,7 @@ export default function Rater() {
     >
       {Array.from({ length: 10 }, (_, i) => (
         <Button
-        size={['xs','sm','md']}
+          size={["xs", "sm", "md"]}
           borderRight={"1px solid black"}
           flex={1}
           backgroundColor={"transparent"}
@@ -19,7 +19,7 @@ export default function Rater() {
           borderRadius={0}
           key={i}
         >
-          {i+1}
+          {i + 1}
         </Button>
       ))}
     </Box>
