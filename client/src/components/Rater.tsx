@@ -1,9 +1,13 @@
 import { Box, Button } from "@chakra-ui/react";
-import { useState } from "react";
+import { memo, useState } from "react";
 
-export default function Rater() {
-  const [selected, setSelected] = useState<number | null>(null);
-
+export default memo(function Rater({ rating, ratingParam }: any) {
+  const [selected, setSelected] = useState();
+  const rate = (e: any) => {
+    console.log(e.target.innerText);
+    setSelected(e.target.innerText);
+    rating(ratingParam, parseInt(e.target.innerText));
+  };
   return (
     <Box
       overflow={"hidden"}
@@ -14,25 +18,21 @@ export default function Rater() {
     >
       {Array.from({ length: 10 }, (_, i) => (
         <Button
+          onClick={(e) => {
+            rate(e);
+          }}
           size={["xs", "sm", "md"]}
           borderRight={"1px solid black"}
           flex={1}
-          backgroundColor={selected === i + 1 ? "blue.500" : "transparent"}
-          color={selected === i + 1 ? "white" : "black"}
-          colorScheme="gray"
+          backgroundColor={selected == i + 1 ? "" : "transparent"}
+          colorScheme="blue"
+          color={selected != i + 1 ? "black" : "white"}
           borderRadius={0}
           key={i + 1}
-          onClick={() => setSelected(i + 1)}
-          _hover={{
-            backgroundColor: selected === i + 1 ? "blue.500" : "gray.200",
-          }}
-          _focus={{
-            boxShadow: "none",
-          }}
         >
           {i + 1}
         </Button>
       ))}
     </Box>
   );
-}
+});
