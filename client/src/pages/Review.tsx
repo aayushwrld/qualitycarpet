@@ -15,12 +15,39 @@ import optionsData from "../assets/options.json";
 import logo from "../assets/Logo.png";
 import Development from "../components/Development";
 import Rater from "../components/Rater";
+import RatingText from "../components/RatingText";
 
 export default memo(function Review() {
-  const [data, setData] = useState({ work: true, service: "" });
+  const [data, setData] = useState({
+    work: true,
+    service: "",
+    reliability: 0,
+    quality: 0,
+    tidiness: 0,
+    courtesy: 0,
+    brief: "",
+    review: "",
+    date: null,
+    postcode: "",
+    value: null,
+    tradeperson: true,
+    contact: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone: null,
+    },
+  });
 
-  const yesNo = (arg: boolean) => {
+  const yesNoWork = (arg: boolean) => {
     setData({ ...data, work: arg });
+  };
+  const yesNoTradePerson = (arg: boolean) => {
+    setData({ ...data, tradeperson: arg });
+  };
+
+  const setRating = (rateParam: string, rating: number) => {
+    setData({ ...data, [rateParam]: rating });
   };
 
   useEffect(() => {
@@ -63,12 +90,12 @@ export default memo(function Review() {
             </Flex>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"Was any work carried out?"} />
-            <TwoButtons exportData={yesNo} />
+            <TwoButtons exportData={yesNoWork} />
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"What services did you require?"} />
             <Select
               size={["xs", "sm", "md"]}
@@ -86,7 +113,7 @@ export default memo(function Review() {
             </Select>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"How would you rate the experience?"} />
             <Flex gap={"3vh"} direction={"column"}>
               <Flex direction={"column"}>
@@ -98,34 +125,49 @@ export default memo(function Review() {
                   direction={"column"}
                   fontSize={["2vh", "2vh", "1.2vw"]}
                 >
-                  <Text fontWeight={"500"} fontSize={["1.8vh", "2vh", "1.2vw"]}>
-                    Reliability & timekeeping
-                  </Text>
-                  <Rater />
+                  <Flex justifyContent={"space-between"}>
+                    <Text
+                      fontWeight={"500"}
+                      fontSize={["1.8vh", "2vh", "1.2vw"]}
+                    >
+                      Reliability & timekeeping
+                    </Text>
+                    <RatingText rating={data.reliability} />
+                  </Flex>
+                  <Rater rating={setRating} ratingParam={"reliability"} />
                 </Flex>
               </Flex>
               <Flex gap={1} direction={"column"}>
-                <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
-                  Reliability & timekeeping
-                </Text>
-                <Rater />
+                <Flex justifyContent={"space-between"}>
+                  <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
+                    Quality of workmanship
+                  </Text>
+                  <RatingText rating={data.quality} />
+                </Flex>
+                <Rater rating={setRating} ratingParam={"quality"} />
               </Flex>
               <Flex gap={1} direction={"column"}>
-                <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
-                  Reliability & timekeeping
-                </Text>
-                <Rater />
+                <Flex justifyContent={"space-between"}>
+                  <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
+                    Tidiness
+                  </Text>
+                  <RatingText rating={data.tidiness} />
+                </Flex>
+                <Rater rating={setRating} ratingParam={"tidiness"} />
               </Flex>
               <Flex gap={1} direction={"column"}>
-                <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
-                  Reliability & timekeeping
-                </Text>
-                <Rater />
+                <Flex justifyContent={"space-between"}>
+                  <Text fontWeight={"500"} fontSize={["1.7vh", "2vh", "1.2vw"]}>
+                    Courtesy
+                  </Text>
+                  <RatingText rating={data.courtesy} />
+                </Flex>
+                <Rater rating={setRating} ratingParam={"courtesy"} />
               </Flex>
             </Flex>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"Your Brief Job Description "} />
             <Flex direction={"column"}>
               <Text fontSize={["1.3vh", "1.5vh", "2vh"]} color={"gray"}>
@@ -140,7 +182,7 @@ export default memo(function Review() {
             </Flex>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"Your Review"} />
             <Textarea
               size={["xs", "sm", "md"]}
@@ -151,7 +193,7 @@ export default memo(function Review() {
             ></Textarea>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"Date of experience"} />
             <Input
               size={["xs", "sm", "md"]}
@@ -160,7 +202,7 @@ export default memo(function Review() {
             ></Input>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"What was the postcode of the project?"} />
             <Input
               size={["xs", "sm", "md"]}
@@ -171,7 +213,7 @@ export default memo(function Review() {
             ></Input>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Flex gap={"1vh"} alignItems={"center"}>
               <Ques question={"What was the value of work?"} />
               <Text fontSize={["1.3vh", "1.5vh", "2vh"]} color={"gray"}>
@@ -187,12 +229,12 @@ export default memo(function Review() {
             ></Input>
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"Would you recommend this tradesperson?"} />
-            <TwoButtons exportData={yesNo} />
+            <TwoButtons exportData={yesNoTradePerson} />
           </Flex>
 
-          <Flex flexDirection={"column"} gap={['1.2vw','1.2vw',"1vh"]}>
+          <Flex flexDirection={"column"} gap={["1.2vw", "1.2vw", "1vh"]}>
             <Ques question={"Your contact details"} />
             <Flex gap={1}>
               <Input

@@ -46,7 +46,7 @@ const formSchema = new mongoose.Schema({
     require: false,
   },
   tradeperson: {
-    type: String,
+    type: Boolean,
     required: false,
   },
   contact: {
