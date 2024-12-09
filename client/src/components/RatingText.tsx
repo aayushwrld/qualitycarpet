@@ -1,4 +1,4 @@
-import { InfoIcon, InfoOutlineIcon } from "@chakra-ui/icons";
+import { InfoIcon } from "@chakra-ui/icons";
 import { Flex, Text } from "@chakra-ui/react";
 
 export default function RatingText({ rating }: { rating: number }) {
