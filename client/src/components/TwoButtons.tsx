@@ -25,7 +25,7 @@ export default function TwoButtons({ exportData }: TwoButtonsProps) {
     <Flex
       width={"100%"}
       padding={"1vh"}
-      backgroundColor={"#edebeb"}
+      backgroundColor={"#EDEBEB"}
       borderRadius={"10px"}
       justifyContent={"center"}
     >
