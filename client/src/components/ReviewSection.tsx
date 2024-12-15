@@ -1,99 +1,43 @@
 "use client";
 
-// import Image from 'next/image'
 import {
   Box,
-  Center,
   Heading,
   Text,
-  Stack,
-  Avatar,
-  useColorModeValue,
-  Flex,
   Button,
+  Flex,
 } from "@chakra-ui/react";
-import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import ReviewCard from "./ReviewCard";
 
-// Rating Component
-interface RatingProps {
-  rating: number;
-}
+// Sample Review Data
+const reviews = [
+  {
+    id: 1,
+    author: "John Doe",
+    rating: 4.5,
+    title: "Fantastic Service!",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac orci purus.",
+    avatar: "https://i.pravatar.cc/150?img=1",
+  },
+  {
+    id: 2,
+    author: "Jane Smith",
+    rating: 5,
+    title: "Highly Recommend!",
+    text: "Vestibulum et ligula in nunc bibendum fringilla a eu lectus.",
+    avatar: "https://i.pravatar.cc/150?img=2",
+  },
+  {
+    id: 3,
+    author: "Alice Johnson",
+    rating: 4,
+    title: "Great Experience!",
+    text: "Quisque facilisis dapibus elit, non tincidunt nisl varius et.",
+    avatar: "https://i.pravatar.cc/150?img=3",
+  },
+];
 
-function Rating({ rating }: RatingProps) {
-  return (
-    <Box display="flex" alignItems="center">
-      {Array(5)
-        .fill("")
-        .map((_, i) => {
-          const roundedRating = Math.round(rating * 2) / 2;
-          if (roundedRating - i >= 1) {
-            return (
-              <BsStarFill
-                key={i}
-                style={{ marginLeft: "1" }}
-                color={i < rating ? "teal.500" : "gray.300"}
-              />
-            );
-          }
-          if (roundedRating - i === 0.5) {
-            return <BsStarHalf key={i} style={{ marginLeft: "1" }} />;
-          }
-          return <BsStar key={i} style={{ marginLeft: "1" }} />;
-        })}
-    </Box>
-  );
-}
-
-function ReviewCard() {
-  return (
-    <Center py={2} margin={"10px"}>
-      <Box
-        maxW={"445px"}
-        w={"full"}
-        bg={useColorModeValue("white", "gray.900")}
-        boxShadow={"xl"}
-        rounded={"md"}
-        p={6}
-        overflow={"hidden"}
-        transition="all 0.3s ease"
-        _hover={{
-          transform: "translateY(-5px)",
-          boxShadow: "2xl",
-        }}
-      >
-        <Stack>
-          <Stack direction={"row"} spacing={4} align={"center"}>
-            <Avatar
-              src={"https://avatars0.githubusercontent.com/u/1164541?v=4"}
-            />
-            <Stack direction={"column"} spacing={0} fontSize={"sm"}>
-              <Text fontWeight={600}>Achim Rolle</Text>
-            </Stack>
-          </Stack>
-          <Flex justifyContent="space-between" alignContent="center">
-            <Rating rating={4.5} />
-          </Flex>
-          <Heading
-            color={useColorModeValue("gray.700", "white")}
-            fontSize={"xl"}
-            fontFamily={"body"}
-          >
-            Boost your conversion rate
-          </Heading>
-          <Text color={"gray.500"} fontSize={"0.9rem"}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
-          </Text>
-        </Stack>
-      </Box>
-    </Center>
-  );
-}
-
-// Main Section
 export default function ReviewSection() {
   return (
     <Box py={10}>
@@ -109,9 +53,16 @@ export default function ReviewSection() {
 
       {/* Review Cards */}
       <Flex direction="row" wrap="wrap" justify="center" gap={5} py={6}>
-        <ReviewCard />
-        <ReviewCard />
-        <ReviewCard />
+        {reviews.map((review) => (
+          <ReviewCard
+            key={review.id}
+            author={review.author}
+            rating={review.rating}
+            title={review.title}
+            text={review.text}
+            avatar={review.avatar}
+          />
+        ))}
       </Flex>
 
       {/* Navigation Button */}
@@ -127,6 +78,7 @@ export default function ReviewSection() {
         >
           More Reviews
         </Button>
+
         <Box py={10}>
           <Text
             textAlign="center"
