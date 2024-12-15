@@ -13,12 +13,13 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import Logo2 from "../assets/Logo2.png";
 import Whatsapp from "../assets/Whatsapp.svg";
 import Instagram from "../assets/Instagram.svg";
 import { IoIosCall } from "react-icons/io";
+import { useState } from "react";
 
 const navOptions: { to: string; option: string }[] = [
   { to: "/pricing", option: "Pricing" },
@@ -29,6 +30,22 @@ const navOptions: { to: string; option: string }[] = [
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [clickCount, setClickCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleImageClick = () => {
+    setClickCount((prev) => prev + 1);
+    
+    // Reset click count after 300ms (for debounce effect)
+    setTimeout(() => setClickCount(0), 500);
+
+    // Navigate to /admin on triple-click
+    if (clickCount + 1 === 3) {
+      navigate("/admin");
+    } else if (clickCount + 1 === 1) {
+      navigate("/");
+    }
+  };
 
   return (
     <div className="navbar">
@@ -44,9 +61,16 @@ const Navbar = () => {
         alignItems="center"
       >
         <Flex color="black" justifyContent={"center"} alignItems={"center"}>
-          <Link to={"/"}>
-            <img src={Logo} width={"170px"} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}/>
-          </Link>
+        <img
+  src={Logo}
+  width={"170px"}
+  onClick={() => {
+    handleImageClick();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+  alt="Logo"
+  style={{ cursor: "pointer" }} // Add this line
+/>
         </Flex>
         <Flex
           display={{ base: "none", md: "flex" }}
@@ -89,17 +113,16 @@ const Navbar = () => {
           <DrawerCloseButton color="white" />
           <DrawerBody>
             <VStack spacing="24px" mt="4">
-              {/* <Box color="white" fontSize="2rem">
-                LOGO
-              </Box> */}
-              <Link to={"/"}>
                 <Image
                   src={Logo2}
                   width={"170px"}
                   borderRadius="12px" // Adjust the value to your preference
                   alt="Logo"
+                  onClick={() => {
+                    handleImageClick();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 />
-              </Link>
               {navOptions.map((navOption) => (
                 <Link
                   key={navOption.option}
