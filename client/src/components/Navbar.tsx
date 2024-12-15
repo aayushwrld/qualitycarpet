@@ -45,7 +45,7 @@ const Navbar = () => {
       >
         <Flex color="black" justifyContent={"center"} alignItems={"center"}>
           <Link to={"/"}>
-            <img src={Logo} width={"170px"} />
+            <img src={Logo} width={"170px"} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}/>
           </Link>
         </Flex>
         <Flex

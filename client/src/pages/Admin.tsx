@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import ReviewCard from '../components/ReviewCard';
 
-// Review Interface
 interface Review {
   id: number;
   author: string;
@@ -20,7 +19,7 @@ interface Review {
   text: string;
   avatar: string;
   isVisible: boolean;
-  isLoading: boolean; // New property for loading state
+  isLoading: boolean;
 }
 
 const initialReviews: Review[] = [...Array(8)].map((_, i) => ({
@@ -30,8 +29,8 @@ const initialReviews: Review[] = [...Array(8)].map((_, i) => ({
   title: 'Boost your conversion rate',
   text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
   avatar: 'https://i.pravatar.cc/150?img=' + (i + 1),
-  isVisible: true, // Default to visible
-  isLoading: false, // Default to not loading
+  isVisible: true,
+  isLoading: false,
 }));
 
 export default function AdminPage() {
@@ -39,14 +38,12 @@ export default function AdminPage() {
   const toast = useToast();
 
   const toggleVisibility = (id: number) => {
-    // Set isLoading to true for the selected review
     setReviews((prevReviews) =>
       prevReviews.map((review) =>
         review.id === id ? { ...review, isLoading: true } : review
       )
     );
 
-    // Simulate loading with timeout
     setTimeout(() => {
       setReviews((prevReviews) =>
         prevReviews.map((review) =>
@@ -56,7 +53,6 @@ export default function AdminPage() {
         )
       );
 
-      // Show toast notification
       const updatedReview = reviews.find((review) => review.id === id);
       if (updatedReview) {
         toast({
@@ -70,7 +66,7 @@ export default function AdminPage() {
           position: 'top',
         });
       }
-    }, 1500); // 1.5 seconds loading effect
+    }, 1500);
   };
 
   return (
@@ -80,7 +76,6 @@ export default function AdminPage() {
         {reviews.map((review) => (
           <Center py={2} key={review.id}>
             <Box position="relative">
-              {/* Render ReviewCard */}
               <ReviewCard
                 author={review.author}
                 rating={review.rating}
@@ -88,7 +83,6 @@ export default function AdminPage() {
                 text={review.text}
                 avatar={review.avatar}
               />
-              {/* Visibility Toggle Button */}
               <Button
                 mt={4}
                 size="sm"
@@ -96,7 +90,7 @@ export default function AdminPage() {
                 onClick={() => toggleVisibility(review.id)}
                 left="50%"
                 transform="translateX(-50%)"
-                isDisabled={review.isLoading} // Disable button during loading
+                isDisabled={review.isLoading}
               >
                 {review.isLoading ? (
                   <Spinner size="xs" color="white" />

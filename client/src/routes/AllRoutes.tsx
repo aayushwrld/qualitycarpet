@@ -5,6 +5,7 @@ import Contact from '../pages/Contact'
 import { Pricing } from '../pages/Pricing'
 import Review from '../pages/Review'
 import Admin from '../pages/Admin'
+import Reviews from '../pages/Reviews'
 
 export default function AllRoutes() {
   return (
@@ -14,6 +15,7 @@ export default function AllRoutes() {
         <Route path='/pricing' element={<Pricing />} />
         <Route path='/review' element={<Review />} />
         <Route path='/admin' element={<Admin />} />
+        <Route path='/reviews' element={<Reviews />} />
         <Route path='/*' element={<Error />} />
     </Routes>
   )
