@@ -42,29 +42,48 @@ export default memo(function Review() {
       phone: 0,
     },
   });
-  const submit = () => {
-    axios
-      .post("http://localhost:8080/form/new", data)
-      .then((res) => {
-        console.log(res.data);
-        toast({
-          title: "Review Submitted",
-          description: "Thanks for taking out time to submit this review!",
-          status: "success",
-          duration: 3000,
-          isClosable: false,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        toast({
-          title: "Error!",
-          description: "Fill all details properly or contact the admin.",
-          status: "error",
-          duration: 3000,
-          isClosable: false,
-        });
+  const submit = (e: any) => {
+    e.preventDefault();
+    console.log(data.contact.phone.toString().length);
+    if (data.contact.phone.toString().length != 10) {
+      toast({
+        title: "Error!",
+        description: "Phone number is not in correct format!",
+        status: "error",
+        duration: 3000,
+        isClosable: false,
       });
+    } else {
+      toast({
+        title: "Submitting your review!",
+        status: "loading",
+        duration: 3000,
+        isClosable: false,
+      });
+      axios
+        .post("https://backend.qualitycarpetflooring.co.uk/form/new", data)
+        .then((res) => {
+          console.log(res.data);
+          toast({
+            title: "Review Submitted",
+            description: "Thanks for taking out time to submit this review!",
+            status: "success",
+            duration: 3000,
+            isClosable: false,
+          });
+          window.location.href = "https://www.qualitycarpetflooring.co.uk/";
+        })
+        .catch((err) => {
+          console.log(err);
+          toast({
+            title: "Error!",
+            description: "Fill all details properly or contact the admin.",
+            status: "error",
+            duration: 3000,
+            isClosable: false,
+          });
+        });
+    }
   };
 
   const yesNoWork = (arg: boolean) => {
@@ -85,7 +104,11 @@ export default memo(function Review() {
   return (
     <>
       <Development />
-      <form>
+      <form
+        onSubmit={(e) => {
+          submit(e);
+        }}
+      >
         <Flex
           flex={1}
           flexDirection={"column"}
@@ -365,7 +388,6 @@ export default memo(function Review() {
             </Flex>
             <Button
               type="submit"
-              onClick={submit}
               size={["xs", "sm", "md"]}
               width={"100%"}
               colorScheme="blue"

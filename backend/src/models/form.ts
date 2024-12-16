@@ -65,8 +65,6 @@ const formSchema = new mongoose.Schema({
     phone: {
       type: String,
       required: true,
-      minLength: 10,
-      maxLength: 10,
     },
   },
 });
