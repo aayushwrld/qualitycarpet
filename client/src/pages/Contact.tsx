@@ -23,6 +23,7 @@ import { BsPerson, BsPhone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
+import Transitions from "./Transitions";
 
 const confetti = {
   light: {
@@ -58,135 +59,137 @@ const contactOptions = [
 
 const Contact = () => {
   return (
-    <Container
-      maxW="7xl"
-      py={10}
-      px={{ base: 5, md: 8 }}
-      css={{
-        backgroundImage: CONFETTI_LIGHT,
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <Stack spacing={10}>
-        <Flex align="center" justifyContent="center" direction="column">
-          <Heading
-            fontSize="4xl"
-            mb={2}
-            fontWeight={"bold"}
-            fontFamily={"Work Sans"}
+    <Transitions>
+      <Container
+        maxW="7xl"
+        py={10}
+        px={{ base: 5, md: 8 }}
+        css={{
+          backgroundImage: CONFETTI_LIGHT,
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <Stack spacing={10}>
+          <Flex align="center" justifyContent="center" direction="column">
+            <Heading
+              fontSize="4xl"
+              mb={2}
+              fontWeight={"bold"}
+              fontFamily={"Work Sans"}
+            >
+              Contact Us
+            </Heading>
+            <Text fontSize="md" textAlign="center">
+              Reach out to us for carpet services!
+            </Text>
+          </Flex>
+          <Stack
+            spacing={{ base: 6, md: 0 }}
+            direction={{ base: "column", md: "row" }}
+            justifyContent="space-between"
           >
-            Contact Us
-          </Heading>
-          <Text fontSize="md" textAlign="center">
-            Reach out to us for carpet services!
-          </Text>
-        </Flex>
-        <Stack
-          spacing={{ base: 6, md: 0 }}
-          direction={{ base: "column", md: "row" }}
-          justifyContent="space-between"
-        >
-          {contactOptions.map((option, index) => (
-            <Fragment key={index}>
+            {contactOptions.map((option, index) => (
+              <Fragment key={index}>
+                <Stack
+                  spacing={3}
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  px={3}
+                >
+                  <Icon as={option.icon} w={10} h={10} color="#3D8EEF" />
+                  <Text fontSize="lg" fontWeight="semibold">
+                    {option.label}
+                  </Text>
+                  <Text fontSize="md" textAlign="center">
+                    {option.value}
+                  </Text>
+                </Stack>
+                {contactOptions.length - 1 !== index && (
+                  <Flex>
+                    <Divider orientation="vertical" />
+                  </Flex>
+                )}
+              </Fragment>
+            ))}
+          </Stack>
+          <VStack
+            as="form"
+            spacing={8}
+            w="100%"
+            bg={useColorModeValue("white", "gray.700")}
+            rounded="lg"
+            boxShadow="lg"
+            p={{ base: 5, sm: 10 }}
+          >
+            <VStack spacing={4} w="100%">
               <Stack
+                w="100%"
                 spacing={3}
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-                px={3}
+                direction={{ base: "column", md: "row" }}
               >
-                <Icon as={option.icon} w={10} h={10} color="#3D8EEF" />
-                <Text fontSize="lg" fontWeight="semibold">
-                  {option.label}
-                </Text>
-                <Text fontSize="md" textAlign="center">
-                  {option.value}
-                </Text>
+                <FormControl id="name">
+                  <FormLabel>Your Name</FormLabel>
+                  <InputGroup borderColor="#E0E1E7">
+                    <InputLeftElement pointerEvents="none">
+                      <BsPerson color="gray.800" />
+                    </InputLeftElement>
+                    <Input type="text" size="md" placeholder="Your name" />
+                  </InputGroup>
+                </FormControl>
+                <FormControl id="email">
+                  <FormLabel>Email</FormLabel>
+                  <InputGroup borderColor="#E0E1E7">
+                    <InputLeftElement pointerEvents="none">
+                      <MdOutlineEmail color="gray.800" />
+                    </InputLeftElement>
+                    <Input type="email" size="md" placeholder="Your email" />
+                  </InputGroup>
+                </FormControl>
               </Stack>
-              {contactOptions.length - 1 !== index && (
-                <Flex>
-                  <Divider orientation="vertical" />
-                </Flex>
-              )}
-            </Fragment>
-          ))}
-        </Stack>
-        <VStack
-          as="form"
-          spacing={8}
-          w="100%"
-          bg={useColorModeValue("white", "gray.700")}
-          rounded="lg"
-          boxShadow="lg"
-          p={{ base: 5, sm: 10 }}
-        >
-          <VStack spacing={4} w="100%">
-            <Stack
-              w="100%"
-              spacing={3}
-              direction={{ base: "column", md: "row" }}
-            >
-              <FormControl id="name">
-                <FormLabel>Your Name</FormLabel>
-                <InputGroup borderColor="#E0E1E7">
-                  <InputLeftElement pointerEvents="none">
-                    <BsPerson color="gray.800" />
-                  </InputLeftElement>
-                  <Input type="text" size="md" placeholder="Your name" />
-                </InputGroup>
+              <FormControl id="subject">
+                <FormLabel>Subject</FormLabel>
+                <Input
+                  type="text"
+                  placeholder="Are you available for carpet work?"
+                  rounded="md"
+                />
               </FormControl>
-              <FormControl id="email">
-                <FormLabel>Email</FormLabel>
-                <InputGroup borderColor="#E0E1E7">
-                  <InputLeftElement pointerEvents="none">
-                    <MdOutlineEmail color="gray.800" />
-                  </InputLeftElement>
-                  <Input type="email" size="md" placeholder="Your email" />
-                </InputGroup>
+              <FormControl id="message">
+                <FormLabel>Message</FormLabel>
+                <Textarea
+                  size="lg"
+                  placeholder="Enter your message"
+                  rounded="md"
+                />
               </FormControl>
-            </Stack>
-            <FormControl id="subject">
-              <FormLabel>Subject</FormLabel>
-              <Input
-                type="text"
-                placeholder="Are you available for carpet work?"
-                rounded="md"
-              />
-            </FormControl>
-            <FormControl id="message">
-              <FormLabel>Message</FormLabel>
-              <Textarea
-                size="lg"
-                placeholder="Enter your message"
-                rounded="md"
-              />
-            </FormControl>
+            </VStack>
+            <HStack w="100%" color="black" justifyContent={"center"}>
+              <Button
+                colorScheme="blue"
+                bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
+                color="white"
+                variant="solid"
+              >
+                Send Message
+              </Button>
+              <Text>or</Text>
+              <Button
+                leftIcon={<IoIosCall />}
+                colorScheme="green"
+                bgGradient="linear(to-r, green.300, #38A169, green.600)"
+                color="white"
+                variant="solid"
+                as="a"
+                href="tel:+447588608000"
+              >
+                Call Now
+              </Button>
+            </HStack>
           </VStack>
-          <HStack w="100%" color='black' justifyContent={'center'}>
-            <Button
-              colorScheme="blue"
-              bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
-              color="white"
-              variant="solid"
-            >
-              Send Message
-            </Button>
-            <Text>or</Text>
-            <Button
-            leftIcon={<IoIosCall />}
-            colorScheme="green"
-            bgGradient="linear(to-r, green.300, #38A169, green.600)"
-            color="white"
-            variant="solid"
-            as="a"
-            href="tel:+447588608000"
-          >
-            Call Now
-          </Button>
-          </HStack>
-        </VStack>
-      </Stack>
-    </Container>
+        </Stack>
+      </Container>
+    </Transitions>
   );
 };
 

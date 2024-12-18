@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import ReviewCard from "../components/ReviewCard";
 import { Link } from "react-router-dom";
+import Transitions from "./Transitions";
 
 // Review Interface
 interface Review {
@@ -47,78 +48,79 @@ export default function Reviews() {
   }, []);
 
   return (
-    <Container maxW="6xl" py={10}>
-      {/* Page Heading */}
-      <Flex align="center" justifyContent="center" direction="column" mb={10}>
-        <Heading
-          fontSize="4xl"
-          mb={2}
-          fontWeight={"bold"}
-          fontFamily={"Work Sans"}
-        >
-          Reviews
-        </Heading>
-        <Text fontSize="md" textAlign="center">
-          What our customers say
-        </Text>
-      </Flex>
-
-      {/* Loading Animation */}
-      {loading ? (
-        <Flex justify="center" align="center" height="50vh">
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="teal.500"
-            size="xl"
-          />
+    <Transitions>
+      <Container maxW="6xl" py={10}>
+        {/* Page Heading */}
+        <Flex align="center" justifyContent="center" direction="column" mb={10}>
+          <Heading
+            fontSize="4xl"
+            mb={2}
+            fontWeight={"bold"}
+            fontFamily={"Work Sans"}
+          >
+            Reviews
+          </Heading>
+          <Text fontSize="md" textAlign="center">
+            What our customers say
+          </Text>
         </Flex>
-      ) : (
-        <>
-          {/* Reviews Grid */}
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
-            {reviews.map((review) => (
-              <Box key={review.id}>
-                <ReviewCard
-                  author={review.author}
-                  rating={review.rating}
-                  title={review.title}
-                  text={review.text}
-                  avatar={review.avatar}
-                />
-              </Box>
-            ))}
-          </SimpleGrid>
 
-          {/* Call to Action */}
-         
-        </>
-      )}
-       <Box textAlign="center" mt={8}>
-            <Box py={10}>
-              <Text
-                textAlign="center"
-                mb={2}
-                fontFamily={"Work Sans"}
-                fontSize={"2xl"}
-                fontWeight={"bold"}
-              >
-                Had a service done from us? Review us today.
-              </Text>
-              <Button
-                as={Link}
-                to="/review"
-                colorScheme="yellow"
-                bgGradient="linear(to-r, yellow.400, yellow.500, yellow.600)"
-                color="white"
-                variant="solid"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              >
-                Review Us
-              </Button>
-            </Box>
+        {/* Loading Animation */}
+        {loading ? (
+          <Flex justify="center" align="center" height="50vh">
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="teal.500"
+              size="xl"
+            />
+          </Flex>
+        ) : (
+          <>
+            {/* Reviews Grid */}
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
+              {reviews.map((review) => (
+                <Box key={review.id}>
+                  <ReviewCard
+                    author={review.author}
+                    rating={review.rating}
+                    title={review.title}
+                    text={review.text}
+                    avatar={review.avatar}
+                  />
+                </Box>
+              ))}
+            </SimpleGrid>
+
+            {/* Call to Action */}
+          </>
+        )}
+        <Box textAlign="center" mt={8}>
+          <Box py={10}>
+            <Text
+              textAlign="center"
+              mb={2}
+              fontFamily={"Work Sans"}
+              fontSize={"2xl"}
+              fontWeight={"bold"}
+            >
+              Had a service done from us? Review us today.
+            </Text>
+            <Button
+              as={Link}
+              to="/review"
+              colorScheme="yellow"
+              bgGradient="linear(to-r, yellow.400, yellow.500, yellow.600)"
+              color="white"
+              variant="solid"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              Review Us
+            </Button>
           </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Transitions>
   );
 }
