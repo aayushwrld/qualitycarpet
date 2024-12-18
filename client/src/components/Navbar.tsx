@@ -121,6 +121,7 @@ const Navbar = () => {
                   onClick={() => {
                     handleImageClick();
                     window.scrollTo({ top: 0, behavior: "smooth" });
+                    onClose()
                   }}
                 />
               {navOptions.map((navOption) => (
