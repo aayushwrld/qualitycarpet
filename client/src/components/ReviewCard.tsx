@@ -32,7 +32,6 @@ interface RatingProps {
   }
 
 interface ReviewCardProps {
-    author: string;
     rating: number;
     title: string;
     text: string;
@@ -40,7 +39,6 @@ interface ReviewCardProps {
   }
   
   export default function ReviewCard({
-    author,
     rating,
     title,
     text,
@@ -64,9 +62,6 @@ interface ReviewCardProps {
         <Stack>
           <Stack direction="row" spacing={4} align="center">
             <Avatar src={avatar} />
-            <Stack direction="column" spacing={0} fontSize="sm">
-              <Text fontWeight={600}>{author}</Text>
-            </Stack>
           </Stack>
           <Rating rating={rating} />
           <Heading
