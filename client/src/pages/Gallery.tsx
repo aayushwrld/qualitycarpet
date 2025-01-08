@@ -12,9 +12,10 @@ import {
 import Transitions from "./Transitions";
 import { GrGallery } from "react-icons/gr";
 
+
 const images = Array.from(
   { length: 32 },
-  (_, i) => `/src/assets/gallery${i + 1}.jpeg`
+  (_, i) => `./src/assets/gallery${i + 1}.jpeg`
 );
 
 const Gallery = () => {
