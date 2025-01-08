@@ -6,12 +6,15 @@ import {
   Container,
   Text,
   Flex,
+  Button,
+  Stack,
 } from "@chakra-ui/react";
 import Transitions from "./Transitions";
+import { GrGallery } from "react-icons/gr";
 
 const images = Array.from(
   { length: 32 },
-  (_, i) => `../src/assets/gallery${i + 1}.jpeg`
+  (_, i) => `/src/assets/gallery${i + 1}.jpeg`
 );
 
 const Gallery = () => {
@@ -33,7 +36,7 @@ const Gallery = () => {
     <Transitions>
       <Container
         maxW="7xl"
-        py={10}
+        py={5}
         px={{ base: 5, md: 8 }}
         css={{
           backgroundImage: CONFETTI_LIGHT,
@@ -84,6 +87,23 @@ const Gallery = () => {
           ))}
         </Grid>
       </Container>
+      <Stack spacing={4} align="center" mt={5} mb={6}>
+        <Button
+          leftIcon={<GrGallery />}
+          colorScheme="blue"
+          bgGradient="linear(to-r, blue.300, #3D8EEF, blue.600)"
+          color="white"
+          variant="solid"
+          onClick={() =>
+            window.open(
+              "https://www.checkatrade.com/trades/qualitycarpetandflooringltd877181#gallery",
+              "_blank"
+            )
+          }
+        >
+          Explore more of our Gallery
+        </Button>
+      </Stack>
     </Transitions>
   );
 };
