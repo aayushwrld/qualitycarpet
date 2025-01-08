@@ -6,6 +6,7 @@ import { Pricing } from "../pages/Pricing";
 import Review from "../pages/Review";
 import Admin from "../pages/Admin";
 import Reviews from "../pages/Reviews";
+import Gallery from "../pages/Gallery";
 import { AnimatePresence } from "framer-motion";
 
 export default function AllRoutes() {
@@ -18,6 +19,7 @@ export default function AllRoutes() {
         <Route path="/review" element={<Review />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/reviews" element={<Reviews />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </AnimatePresence>

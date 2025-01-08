@@ -23,7 +23,7 @@ import { useState } from "react";
 
 const navOptions: { to: string; option: string }[] = [
   { to: "/pricing", option: "Pricing" },
-  { to: "/", option: "Gallery" },
+  { to: "/gallery", option: "Gallery" },
   { to: "/contact", option: "Contact" },
   { to: "/review", option: "Review Us" },
 ];
