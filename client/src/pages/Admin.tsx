@@ -81,7 +81,6 @@ export default function AdminPage() {
             <Center py={2} key={review.id}>
               <Box position="relative">
                 <ReviewCard
-                  author={review.author}
                   rating={review.rating}
                   title={review.title}
                   text={review.text}

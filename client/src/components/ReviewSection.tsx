@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Heading, Text, Button, Flex, Image } from "@chakra-ui/react";
 import ReviewCard from "./ReviewCard";
 import Checkatrade from "../assets/checkatrade.png";

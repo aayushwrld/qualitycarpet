@@ -83,7 +83,6 @@ export default function Reviews() {
               {reviews.map((review) => (
                 <Box key={review.id}>
                   <ReviewCard
-                    author={review.author}
                     rating={review.rating}
                     title={review.title}
                     text={review.text}
