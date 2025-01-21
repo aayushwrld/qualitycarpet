@@ -21,13 +21,17 @@ import Instagram from "../assets/Instagram.svg";
 import { IoIosCall } from "react-icons/io";
 import { useState } from "react";
 
-const navOptions: { to: string; option: string }[] = [
+const navOptions: { to: string; option: string; external?: boolean }[] = [
   { to: "/pricing", option: "Pricing" },
+  { to: "/about", option: "About" },
   { to: "/gallery", option: "Gallery" },
   { to: "/contact", option: "Contact" },
-  { to: "/review", option: "Review Us" },
+  {
+    to: "https://www.checkatrade.com/give-feedback/trades/qualitycarpetandflooringltd877181",
+    option: "Review Us",
+    external: true, // Add an external flag
+  },
 ];
-
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [clickCount, setClickCount] = useState(0);
@@ -35,11 +39,9 @@ const Navbar = () => {
 
   const handleImageClick = () => {
     setClickCount((prev) => prev + 1);
-    
-    // Reset click count after 300ms (for debounce effect)
+
     setTimeout(() => setClickCount(0), 500);
 
-    // Navigate to /admin on triple-click
     if (clickCount + 1 === 3) {
       navigate("/admin");
     } else if (clickCount + 1 === 1) {
@@ -61,16 +63,16 @@ const Navbar = () => {
         alignItems="center"
       >
         <Flex color="black" justifyContent={"center"} alignItems={"center"}>
-        <img
-  src={Logo}
-  width={"170px"}
-  onClick={() => {
-    handleImageClick();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
-  alt="Logo"
-  style={{ cursor: "pointer" }} // Add this line
-/>
+          <img
+            src={Logo}
+            width={"170px"}
+            onClick={() => {
+              handleImageClick();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            alt="Logo"
+            style={{ cursor: "pointer" }} // Add this line
+          />
         </Flex>
         <Flex
           display={{ base: "none", md: "flex" }}
@@ -80,16 +82,30 @@ const Navbar = () => {
           alignItems={"center"}
         >
           <Flex gap={{ base: "1rem", sm: "1.5rem", lg: "2rem" }}>
-            {navOptions.map((navOption) => (
-              <Link
-                key={navOption.option}
-                to={navOption.to}
-                id="nav-option"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              >
-                {navOption.option}
-              </Link>
-            ))}
+            {navOptions.map((navOption) =>
+              navOption.external ? (
+                <a
+                  key={navOption.option}
+                  href={navOption.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="nav-option"
+                >
+                  {navOption.option}
+                </a>
+              ) : (
+                <Link
+                  key={navOption.option}
+                  to={navOption.to}
+                  id="nav-option"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                >
+                  {navOption.option}
+                </Link>
+              )
+            )}
           </Flex>
           <Flex
             onClick={() => window.open("https://wa.me/447588608000", "_blank")}
@@ -113,17 +129,17 @@ const Navbar = () => {
           <DrawerCloseButton color="white" />
           <DrawerBody>
             <VStack spacing="24px" mt="4">
-                <Image
-                  src={Logo2}
-                  width={"170px"}
-                  borderRadius="12px" // Adjust the value to your preference
-                  alt="Logo"
-                  onClick={() => {
-                    handleImageClick();
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                    onClose()
-                  }}
-                />
+              <Image
+                src={Logo2}
+                width={"170px"}
+                borderRadius="12px" // Adjust the value to your preference
+                alt="Logo"
+                onClick={() => {
+                  handleImageClick();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  onClose();
+                }}
+              />
               {navOptions.map((navOption) => (
                 <Link
                   key={navOption.option}
