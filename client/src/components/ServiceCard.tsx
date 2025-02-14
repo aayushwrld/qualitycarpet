@@ -7,27 +7,36 @@ import {
   Heading,
   Stack,
   Image,
-  Button,
   Flex,
 } from '@chakra-ui/react'
 import ServiceModal from './ServiceModal'
 
 
-export default function ServiceCard({info}:any) {
-    const key = Object.keys(info)[0]
-    const service = info[key]
+interface ServiceInfo {
+  image: string;
+  content: string;
+}
+
+interface ServiceCardProps {
+  info: Record<string, ServiceInfo>;
+}
+
+export default function ServiceCard({ info }: ServiceCardProps) {
+  const key = Object.keys(info)[0];
+  const service = info[key];
+
   return (
     <Center>
       <Box
         role={'group'}
-        // p={6}
         maxW={'330px'}
         w={'full'}
         bg={useColorModeValue('white', 'gray.800')}
         boxShadow='dark-lg'
         rounded={'lg'}
         pos={'relative'}
-        zIndex={1}>
+        zIndex={1}
+      >
         <Box
           rounded={'lg'}
           mt={-2}
@@ -49,7 +58,8 @@ export default function ServiceCard({info}:any) {
             _after: {
               filter: 'blur(20px)',
             },
-          }}>
+          }}
+        >
           <Image
             rounded={'lg'}
             roundedBottom={0}
@@ -57,20 +67,18 @@ export default function ServiceCard({info}:any) {
             width={380}
             objectFit={'cover'}
             src={service.image}
-            alt="#"
+            alt={key}
           />
         </Box>
         <Stack pt={5} align={'center'}>
-          
           <Flex paddingBottom={5} direction={'column'} gap={'1vh'}>
-              <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                {key}
-              </Heading>
-              <ServiceModal image={service.image} title={key} content={service.content}/>
+            <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+              {key}
+            </Heading>
+            <ServiceModal image={service.image} title={key} content={service.content} />
           </Flex>
-          
         </Stack>
       </Box>
     </Center>
-  )
+  );
 }
