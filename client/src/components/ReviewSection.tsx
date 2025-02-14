@@ -105,7 +105,7 @@ export default function ReviewSection() {
         <Box>
           <Rating rating={4.5} />
           <Text fontSize="lg" mt={2} fontWeight="bold">
-            9.65 Rating
+            9.72 Rating
           </Text>
           <Text fontSize="sm" color="gray.800">
             185+ Reviews

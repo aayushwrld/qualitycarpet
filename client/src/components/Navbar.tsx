@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/Logo.png";
 import Logo2 from "../assets/Logo2.png";
 import Whatsapp from "../assets/Whatsapp.svg";
 import Instagram from "../assets/Instagram.svg";
@@ -53,31 +52,31 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Flex
-        bg="rgba(255, 255, 255, 0.2)"
+        bg="#00000099"
         backdropFilter="blur(12px)"
         border="3px solid #020817"
         boxShadow="0 2px 8px #000"
         borderRadius={{ base: "20px", md: "25px" }}
-        p={{ base: "0.5rem 0.8rem", sm: "0.5rem 1.5rem" }}
+        p={{ base: "0.5rem 0.55rem", sm: "0.5rem 1rem" }}
         w={{ base: "90vw", sm: "80vw", lg: "60vw" }}
         justifyContent="space-between"
         alignItems="center"
       >
-        <Flex color="black" justifyContent={"center"} alignItems={"center"}>
+        <Flex color="white" justifyContent={"center"} alignItems={"center"}>
           <img
-            src={Logo}
+            src={Logo2}
             width={"170px"}
             onClick={() => {
               handleImageClick();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             alt="Logo"
-            style={{ cursor: "pointer" }} // Add this line
+            style={{ cursor: "pointer", borderRadius:"12px" }} // Add this line
           />
         </Flex>
         <Flex
           display={{ base: "none", md: "flex" }}
-          color="black"
+          color="white"
           fontSize="1rem"
           gap={"2.5rem"}
           alignItems={"center"}
@@ -117,7 +116,7 @@ const Navbar = () => {
         </Flex>
         <IconButton
           display={{ base: "flex", md: "none" }}
-          icon={<HamburgerIcon w={6} h={6} color="black" />}
+          icon={<HamburgerIcon w={6} h={6} color="white" />}
           aria-label="Open menu"
           variant="unstyled"
           onClick={onOpen}

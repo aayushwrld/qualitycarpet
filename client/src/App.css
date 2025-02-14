@@ -42,8 +42,9 @@
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 50%, rgba(255, 255, 255, 1) 100%);
   background-size: 100% 100%;
 }
+
 #nav-option {
-  color: #000;
+  color: #fff;
   display: inline-block;
   position: relative;
   transition: all 0.2s ease-out;
@@ -58,7 +59,7 @@
   height: 1.8px;
   bottom: -1px;
   left: 0;
-  background-color: #000;
+  background-color: #fff;
   transition: all 0.25s ease-out;
 }
 

@@ -11,8 +11,15 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-export default function ServiceModal({image, title, content}:any) {
+interface ServiceModalProps {
+  image: string;
+  title: string;
+  content: string;
+}
+
+export default function ServiceModal({ image, title, content }: ServiceModalProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Button colorScheme="blue" onClick={onOpen}>Read More</Button>

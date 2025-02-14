@@ -13,6 +13,7 @@ import ServiceModal from './ServiceModal'
 
 
 interface ServiceInfo {
+  title: string;
   image: string;
   content: string;
 }
@@ -73,9 +74,9 @@ export default function ServiceCard({ info }: ServiceCardProps) {
         <Stack pt={5} align={'center'}>
           <Flex paddingBottom={5} direction={'column'} gap={'1vh'}>
             <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-              {key}
+              {service.title}
             </Heading>
-            <ServiceModal image={service.image} title={key} content={service.content} />
+            <ServiceModal  title={service.title} image={service.image} content={service.content}/>
           </Flex>
         </Stack>
       </Box>

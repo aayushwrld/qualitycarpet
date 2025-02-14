@@ -10,7 +10,8 @@ import {
   useColorModeValue,
   Icon,
 } from '@chakra-ui/react'
-import { FaBroom, FaRegClock, FaSmile } from 'react-icons/fa'
+import { FaRegClock, FaSmile } from 'react-icons/fa'
+import { MdDesignServices } from 'react-icons/md'
 
 interface StatsCardProps {
   title: string
@@ -25,9 +26,14 @@ function StatsCard(props: StatsCardProps) {
       px={{ base: 4, md: 8 }}
       py={'5'}
       shadow={'xl'}
-      border={'1px solid'}
+      border={'2px solid'}
       borderColor={useColorModeValue('gray.800', 'gray.500')}
       rounded={'lg'}
+      transition="background-color 0.5s ease-in-out"
+      _hover={{
+        bg: '#00000090', 
+        color: 'white' 
+      }}
       >
       <StatLabel fontWeight={'medium'} display={'flex'}
       alignItems={'center'}
@@ -54,8 +60,8 @@ export default function Stats() {
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'Completed'}
-          stat={'200+ carpet cleanings'}
-          icon={<Icon as={FaBroom} w={6} h={6} />}
+          stat={'500+ carpet fitting'}
+          icon={<Icon as={MdDesignServices} w={6} h={6} />}
         />
         <StatsCard
           title={'Years of experience'}
