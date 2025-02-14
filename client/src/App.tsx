@@ -10,6 +10,9 @@ function App() {
       <Navbar />
       <AllRoutes />
       <Footer />
+      <div className='bg-img'></div>
+      <div className='bg-color'></div>
+
     </div>
   );
 }
