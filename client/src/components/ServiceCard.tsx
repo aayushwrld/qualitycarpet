@@ -1,0 +1,76 @@
+'use client'
+
+import {
+  Box,
+  Center,
+  useColorModeValue,
+  Heading,
+  Stack,
+  Image,
+  Button,
+  Flex,
+} from '@chakra-ui/react'
+import ServiceModal from './ServiceModal'
+
+
+export default function ServiceCard({info}:any) {
+    const key = Object.keys(info)[0]
+    const service = info[key]
+  return (
+    <Center>
+      <Box
+        role={'group'}
+        // p={6}
+        maxW={'330px'}
+        w={'full'}
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow='dark-lg'
+        rounded={'lg'}
+        pos={'relative'}
+        zIndex={1}>
+        <Box
+          rounded={'lg'}
+          mt={-2}
+          pos={'relative'}
+          height={'230px'}
+          _after={{
+            transition: 'all .3s ease',
+            content: '""',
+            w: 'full',
+            h: 'full',
+            pos: 'absolute',
+            top: 5,
+            left: 0,
+            backgroundImage: `url(${service.image})`,
+            filter: 'blur(10px)',
+            zIndex: -1,
+          }}
+          _groupHover={{
+            _after: {
+              filter: 'blur(20px)',
+            },
+          }}>
+          <Image
+            rounded={'lg'}
+            roundedBottom={0}
+            height={230}
+            width={380}
+            objectFit={'cover'}
+            src={service.image}
+            alt="#"
+          />
+        </Box>
+        <Stack pt={5} align={'center'}>
+          
+          <Flex paddingBottom={5} direction={'column'} gap={'1vh'}>
+              <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+                {key}
+              </Heading>
+              <ServiceModal image={service.image} title={key} content={service.content}/>
+          </Flex>
+          
+        </Stack>
+      </Box>
+    </Center>
+  )
+}

@@ -26,6 +26,7 @@ const navOptions: { to: string; option: string; external?: boolean }[] = [
   { to: "/about", option: "About" },
   { to: "/gallery", option: "Gallery" },
   { to: "/contact", option: "Contact" },
+  { to: "/services", option: "Services" },
   {
     to: "https://www.checkatrade.com/give-feedback/trades/qualitycarpetandflooringltd877181",
     option: "Review Us",

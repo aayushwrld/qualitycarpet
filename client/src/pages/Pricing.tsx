@@ -110,19 +110,19 @@ export const Pricing = () => {
           <Divider />
           <PackageTier
             title={"Basic Care"}
-            typePlan="$50.00"
+            typePlan="£50.00"
             options={optionsStarter}
           />
           <Divider />
           <PackageTier
             title={"Deep Clean"}
-            typePlan="$75.00"
+            typePlan="£75.00"
             options={optionsPlus}
           />
           <Divider />
           <PackageTier
             title={"Premium Care"}
-            typePlan="$100.00"
+            typePlan="£100.00"
             options={optionsPro}
           />
           <Divider />
