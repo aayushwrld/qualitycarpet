@@ -4,8 +4,9 @@ import ContactCard from "../components/ContactCard.tsx";
 import ReviewSection from "../components/ReviewSection.tsx";
 import AboutHome from "../components/AboutHome.tsx";
 import Stats from "../components/Stats.tsx";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
 import Transitions from "./Transitions.tsx";
+import Partners from "../assets/Partner/OurPartners.png";
 
 export default function Home() {
   const confetti = {
@@ -40,6 +41,14 @@ export default function Home() {
         </Flex>
         <QuestionAccordion />
         <Stats />
+
+        <Flex justifyContent="center" alignItems="center">
+          <Image
+            src={Partners}
+            alt="Our Partners"
+            width={["80vw", "50vw", "40vw"]}
+          />
+        </Flex>
         <ContactCard />
       </Transitions>
     </>
