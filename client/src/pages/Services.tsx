@@ -3,6 +3,7 @@ import { Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import { servicesList } from "../assets/ServicesList";
 
 export default function Services() {
+  console.log(servicesList)
   return (
     <Flex
       gap={"3vh"}

@@ -43,18 +43,18 @@ export default function ServiceCard({ info }: ServiceCardProps) {
           mt={-2}
           pos={'relative'}
           height={'230px'}
-          _after={{
-            transition: 'all .3s ease',
-            content: '""',
-            w: 'full',
-            h: 'full',
-            pos: 'absolute',
-            top: 5,
-            left: 0,
-            backgroundImage: `url(${service.image})`,
-            filter: 'blur(10px)',
-            zIndex: -1,
-          }}
+          // _after={{
+          //   transition: 'all .3s ease',
+          //   content: '""',
+          //   w: 'full',
+          //   h: 'full',
+          //   pos: 'absolute',
+          //   top: 5,
+          //   left: 0,
+          //   backgroundImage: `url(${service.image})`,
+          //   filter: 'blur(30px)',
+          //   zIndex: -1,
+          // }}
           _groupHover={{
             _after: {
               filter: 'blur(20px)',
