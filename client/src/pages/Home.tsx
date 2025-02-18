@@ -6,7 +6,7 @@ import AboutHome from "../components/AboutHome.tsx";
 import Stats from "../components/Stats.tsx";
 import { Flex, Image } from "@chakra-ui/react";
 import Transitions from "./Transitions.tsx";
-import Partners from "../assets/Partner/OurPartners.png";
+import Partners from "../assets/Partner/OurPartner.png";
 
 export default function Home() {
   const confetti = {
@@ -46,7 +46,8 @@ export default function Home() {
           <Image
             src={Partners}
             alt="Our Partners"
-            width={["80vw", "50vw", "40vw"]}
+            width={["80vw", "50vw", "28vw"]}
+            mt='10'
           />
         </Flex>
         <ContactCard />
