@@ -27,7 +27,7 @@ export const servicesList: Record<string, Service>[] = [
       title: "Engineered Wood Flooring",
       image: EngineeredWood,
       content:
-        "Engineered Wood Flooring – A Timeless Choice for Your Home. Engineered wood flooring is a popular and durable choice, offering a stylish and cost-effective alternative to solid wood flooring. At HS Carpets and Flooring, we provide a wide selection of engineered wood flooring from top manufacturers like Karndean, Amtico, Quickstep, Balterio, and Kährs. Our expert team helps you find the perfect fit for your home, offering professional installation services to ensure a flawless finish. Engineered wood flooring is moisture-resistant, easy to maintain, and available in a variety of colors and styles. Whether for your living room, kitchen, or bathroom, it adds value and elegance to any space. Contact us today for expert guidance and installation services.",
+        "Engineered Wood Flooring – A Timeless Choice for Your Home. Engineered wood flooring is a popular and durable choice, offering a stylish and cost-effective alternative to solid wood flooring. At Quality Carpet & Flooring, we provide a wide selection of engineered wood flooring from top manufacturers like Karndean, Amtico, Quickstep, Balterio, and Kährs. Our expert team helps you find the perfect fit for your home, offering professional installation services to ensure a flawless finish. Engineered wood flooring is moisture-resistant, easy to maintain, and available in a variety of colors and styles. Whether for your living room, kitchen, or bathroom, it adds value and elegance to any space. Contact us today for expert guidance and installation services.",
     },
   },
   {
@@ -43,7 +43,7 @@ export const servicesList: Record<string, Service>[] = [
       title: "Luxury Vinyl Tile (LVT)",
       image: LVT,
       content:
-        "Luxury Vinyl Tile (LVT) – Stylish, Durable, and Affordable. LVT flooring is an excellent choice for those seeking the beauty of natural flooring materials with added durability and water resistance. At HS Carpets and Flooring, we provide high-quality LVT from leading brands like Amtico and Karndean, offering realistic wood and stone effects with incredible detail. Our LVT flooring is perfect for homes and businesses, as it is easy to maintain, scratch-resistant, and comfortable underfoot. Whether for kitchens, bathrooms, or living areas, LVT is a versatile flooring option that blends aesthetics with functionality. Contact us for expert guidance on choosing and installing the best LVT flooring for your space.",
+        "Luxury Vinyl Tile (LVT) – Stylish, Durable, and Affordable. LVT flooring is an excellent choice for those seeking the beauty of natural flooring materials with added durability and water resistance. At Quality Carpet & Flooring, we provide high-quality LVT from leading brands like Amtico and Karndean, offering realistic wood and stone effects with incredible detail. Our LVT flooring is perfect for homes and businesses, as it is easy to maintain, scratch-resistant, and comfortable underfoot. Whether for kitchens, bathrooms, or living areas, LVT is a versatile flooring option that blends aesthetics with functionality. Contact us for expert guidance on choosing and installing the best LVT flooring for your space.",
     },
   },
   {
@@ -59,7 +59,7 @@ export const servicesList: Record<string, Service>[] = [
       title: "Vinyl Flooring",
       image: Vinyl,
       content:
-        "Vinyl Flooring – The Perfect Blend of Style and Practicality. Vinyl flooring is a versatile and cost-effective solution for both residential and commercial spaces. At HS Carpets and Flooring, we provide high-quality vinyl flooring options that mimic the appearance of natural wood, stone, and tile while offering excellent water resistance and durability. Vinyl flooring is easy to clean, making it ideal for kitchens, bathrooms, and busy areas. Our selection includes a variety of colors, patterns, and textures to match any décor style. Whether you want a modern, sleek finish or a traditional look, vinyl flooring is a reliable and stylish choice. Contact us for professional installation and expert advice.",
+        "Vinyl Flooring – The Perfect Blend of Style and Practicality. Vinyl flooring is a versatile and cost-effective solution for both residential and commercial spaces. At Quality Carpet & Flooring, we provide high-quality vinyl flooring options that mimic the appearance of natural wood, stone, and tile while offering excellent water resistance and durability. Vinyl flooring is easy to clean, making it ideal for kitchens, bathrooms, and busy areas. Our selection includes a variety of colors, patterns, and textures to match any décor style. Whether you want a modern, sleek finish or a traditional look, vinyl flooring is a reliable and stylish choice. Contact us for professional installation and expert advice.",
     },
   },
   {
@@ -67,7 +67,7 @@ export const servicesList: Record<string, Service>[] = [
       title: "Laminate Flooring",
       image: Laminate,
       content:
-        "Laminate Flooring – Durable, Affordable, and Stylish. Laminate flooring is a practical and budget-friendly option for those who love the look of hardwood but need a more durable and easy-to-maintain solution. At HS Carpets and Flooring, we offer an extensive range of laminate flooring in various colors and finishes, replicating the natural beauty of real wood. Laminate flooring is scratch-resistant, moisture-resistant, and perfect for busy households with kids and pets. Our high-quality laminate floors provide excellent durability and a long lifespan, making them a great investment. Whether for your living room, office, or kitchen, laminate flooring offers elegance without the high maintenance of solid wood.",
+        "Laminate Flooring – Durable, Affordable, and Stylish. Laminate flooring is a practical and budget-friendly option for those who love the look of hardwood but need a more durable and easy-to-maintain solution. At Quality Carpet & Flooring, we offer an extensive range of laminate flooring in various colors and finishes, replicating the natural beauty of real wood. Laminate flooring is scratch-resistant, moisture-resistant, and perfect for busy households with kids and pets. Our high-quality laminate floors provide excellent durability and a long lifespan, making them a great investment. Whether for your living room, office, or kitchen, laminate flooring offers elegance without the high maintenance of solid wood.",
     },
   },
   {
