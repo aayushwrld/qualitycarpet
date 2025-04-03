@@ -1,0 +1,35 @@
+name: Auto Cherry Pick
+on:
+  pull_request:
+    branches:
+      - master
+    types: ["closed", "labeled"]
+
+jobs:
+  xealth-auto-cherry-pick:
+    permissions:
+      pull-requests: write
+      statuses: read
+      contents: write
+    runs-on: ubuntu-latest
+    name: Xealth Auto Cherry Picker
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: test
+        run: ls -la
+      - name: Xealth Auto Cherry Pick
+        uses: Xealth/cherry-pick-action@v1.1.0-e2e-test-2
+        with:
+          allowUserToSpecifyBranchViaLabel: 'true'
+          labelPatternRequirement: 'CP v'
+          userBranchPrefix: 'v'
+          labels: |
+            cherry-pick
+          reviewers: |
+            aReviewerUser
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
