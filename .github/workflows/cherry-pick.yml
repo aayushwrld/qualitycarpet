@@ -19,8 +19,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: test
-        run: ls -la
+
+      - name: Fetch Latest Changes
+        run: git fetch --all
+
+      - name: Rebase on Latest Branch
+        run: |
+          git checkout -b cherry-pick-temp
+          git rebase origin/main || git rebase --abort
+
       - name: Xealth Auto Cherry Pick
         uses: Xealth/cherry-pick-action@v1.1.0
         with:
@@ -31,5 +38,9 @@ jobs:
             cherry-pick
           reviewers: |
             aReviewerUser
+
+      - name: Push Changes
+        run: git push --force-with-lease origin HEAD
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
