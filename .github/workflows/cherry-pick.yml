@@ -2,7 +2,7 @@ name: Auto Cherry Pick
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: ["closed", "labeled"]
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
       - name: test
         run: ls -la
       - name: Xealth Auto Cherry Pick
-        uses: Xealth/cherry-pick-action@v1.1.0-e2e-test-2
+        uses: Xealth/cherry-pick-action@v1.1.0
         with:
           allowUserToSpecifyBranchViaLabel: 'true'
           labelPatternRequirement: 'CP v'
