@@ -14,7 +14,6 @@ import Services from "../pages/Services";
 export default function AllRoutes() {
   return (
     <AnimatePresence>
-      
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
