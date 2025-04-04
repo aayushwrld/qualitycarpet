@@ -20,14 +20,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Fetch Latest Changes
-        run: git fetch --all
-
-      - name: Rebase on Latest Branch
-        run: |
-          git checkout -b cherry-pick-temp
-          git rebase origin/main || git rebase --abort
-
       - name: Xealth Auto Cherry Pick
         uses: Xealth/cherry-pick-action@v1.1.0
         with:
