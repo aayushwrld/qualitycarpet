@@ -11,8 +11,8 @@ import Partners from "../assets/Partner/OurPartner.png";
 export default function Home() {
   const confetti = {
     dark: {
-      primary: "1A365D", // blue.900
       secondary: "2A4365", // blue.800
+      primary: "1A365D", // blue.900
     },
     light: {
       primary: "4299E1", // blue.400
