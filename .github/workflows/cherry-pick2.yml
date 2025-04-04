@@ -1,0 +1,34 @@
+name: Auto Cherry Pick
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cherry-pick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Cherry Pick Commit
+        id: cherry_pick
+        run: |
+          git cherry-pick ${{ github.event.before }}..${{ github.sha }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Cherry pick commit ${{ github.sha }}
+          branch: cherry-pick-branch
+          labels: cherry-pick, CP v1.1
+          reviewers: aReviewerUser
