@@ -22,7 +22,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git cherry-pick <commit-sha>
+        git cherry-pick <actual-commit-sha>
         git push origin HEAD:v1.1
 
     - name: Apply Labels
