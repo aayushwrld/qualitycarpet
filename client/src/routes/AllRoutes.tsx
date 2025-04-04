@@ -25,6 +25,7 @@ export default function AllRoutes() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
         <Route path="/*" element={<Error />} />
+        
       </Routes>
     </AnimatePresence>
   );
